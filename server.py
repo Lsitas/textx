@@ -6,11 +6,17 @@ host = 'localhost'
 port = 3419
 s.bind((host,port))
 s.listen(5)
-
+name = ''
 print((host,port))
-while True:
+while name != 'q':
    c, addr = s.accept()     # Establish connection with client.
    print('Got connection from', addr)
    name = c.recv(1024)
-   c.send(bytes("Thanks for connecting, ", 'utf-8') + name)
-   c.close()
+   name = str(name, 'utf-8')
+   if name == 'q':
+      c.send(bytes("Good Bye, " + name, 'utf-8'))
+   else:
+      c.send(bytes("Thanks for connecting, " + name, 'utf-8'))
+   print(name)
+
+c.close()
