@@ -12,11 +12,7 @@ def draw(screen):
     pygame.display.flip()
 
 
-def keyHandler():
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            return True
-    return False
+
 
 
 if __name__ == "__main__":
