@@ -10,4 +10,5 @@ while name != 'q':
     s.connect((host, port))
     s.send(bytes(name, 'utf-8'))
     print(str(s.recv(1024),'utf-8'))
+    print(str(s.recv(1024),'utf-8'))
     s.close()
