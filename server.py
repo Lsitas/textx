@@ -11,5 +11,6 @@ print((host,port))
 while True:
    c, addr = s.accept()     # Establish connection with client.
    print('Got connection from', addr)
-   c.send(bytes("thanks for connecting", 'utf-8'))
+   name = c.recv(1024)
+   c.send(bytes("Thanks for connecting, ", 'utf-8') + name)
    c.close()
