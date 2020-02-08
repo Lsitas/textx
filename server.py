@@ -1,6 +1,6 @@
 import socket
 import threading
-host = 'localhost'
+host = '192.168.1.160'
 port = 3419
 name = ''
 inputs = ''
