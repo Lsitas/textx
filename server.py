@@ -15,6 +15,6 @@ while True:
    print('Got connection from', addr, ' as Listener')
    while True:
       name = sender.recv(1024)
-      listener.send(bytes("Thanks for connecting, ", 'utf-8') + name)
+      listener.send(name)
    sender.close()
    listener.close()

@@ -8,5 +8,5 @@ port = 3419                 # Reserve a port for your service.
 
 s.connect((host, port))
 while True:
-    print(s.recv(1024))
+    print(str(s.recv(1024), 'utf-8'))
 s.close()
