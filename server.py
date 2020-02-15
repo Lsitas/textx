@@ -9,8 +9,12 @@ s.listen(5)
 
 print((host,port))
 while True:
-   c, addr = s.accept()     # Establish connection with client.
-   print('Got connection from', addr)
-   name = c.recv(1024)
-   c.send(bytes("Thanks for connecting, ", 'utf-8') + name)
-   c.close()
+   sender, addr = s.accept()     # Establish connection with client.
+   print('Got connection from', addr, ' as Sender')
+   listener, addr = s.accept()     # Establish connection with client.
+   print('Got connection from', addr, ' as Listener')
+   while True:
+      name = sender.recv(1024)
+      listener.send(bytes("Thanks for connecting, ", 'utf-8') + name)
+   sender.close()
+   listener.close()
