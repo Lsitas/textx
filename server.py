@@ -6,11 +6,13 @@ host = 'localhost'
 port = 3419
 s.bind((host,port))
 s.listen(5)
+#senders = []
+
 
 print((host,port))
 while True:
    sender, addr = s.accept()     # Establish connection with client.
-   print('Got connection from', addr, ' as Sender')
+   print('Got connection from', sender, ' as Sender')
    listener, addr = s.accept()     # Establish connection with client.
    print('Got connection from', addr, ' as Listener')
    while True:
