@@ -7,6 +7,7 @@ port = 3419                 # Reserve a port for your service.
 
 
 s.connect((host, port))
+s.sendall(bytes(1))
 while True:
     name = input("")
     s.send(bytes(name, 'utf-8'))
